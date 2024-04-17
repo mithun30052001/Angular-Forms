@@ -22,6 +22,7 @@ export class ValidationErrorsComponent {
     minlength: 'You have entered less characters than expected',
     invalidPassword: 'Password must contain atleast one uppercase,lowercase and a special character',
     whitespaceError: 'Invalid white space detected',
+    invalidMobile: 'Enter a valid Mobile number',
     email: 'Enter a valid email address',
     pattern: 'The input does not match the required pattern',
     min: 'The value is less than the minimum allowed',
