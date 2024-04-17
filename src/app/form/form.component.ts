@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { passwordValidator, whitespaceValidator } from '../helpers/custom-validators';
+import { mobileNumberValidator, passwordValidator, whitespaceValidator } from '../helpers/custom-validators';
 
 @Component({
   selector: 'app-form',
@@ -58,7 +58,7 @@ export class FormComponent implements OnInit{
       userName: [{value: 'defaultname', disabled: false }, [Validators.required, Validators.minLength(8), Validators.maxLength(15), whitespaceValidator()]],
       password: [{value: 'R@ils', disabled: false }, [Validators.required, passwordValidator()]],
       email: [{value: 'default@gmail.com', disabled: true },[Validators.required, Validators.email]],
-      mobileNumber: [{ countrycode: '+91', mobile: '1111' }, [Validators.required]],
+      mobileNumber: [{ countrycode: '+91', mobile: '1111' }, [Validators.required,mobileNumberValidator]],
       number: [{value: null, disabled: false },[Validators.required, Validators.min(1)]],
       dropdownOption: [{value: null, disabled: false }, [Validators.required]],
       radioOption: [{value: null, disabled: false }, [Validators.required]],
