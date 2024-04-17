@@ -1,4 +1,5 @@
 import { FormControl, Validators } from '@angular/forms';
+type CountryCode = '+91' | '+52' | '+63' | '+1';
 
 export function passwordValidator(): Validators {
   return (control: FormControl) => {
@@ -19,17 +20,24 @@ export function whitespaceValidator(): Validators {
   };
 }
 
-export function mv(): Validators {
-  return (control: FormControl) => {
-    const mobileVal = control.value && control.value['mobile'];
-    const countryCodeVal = control.value && control.value['countrycode'];
+export function mobileNumberValidator(control: FormControl<{ mobile: string; countrycode: CountryCode }>): Validators {
+  const mobileVal = control.value && control.value['mobile'];
+  const countryCodeVal = control.value && control.value['countrycode'];
 
-    if (countryCodeVal === '+91') {
-      if (mobileVal.length === 10) {
-        return null;
-      }
-      return { invalidMobile: true };
-    } else return { invalidMobile: true };
+  const countryCodeValidations: { [key in CountryCode]: (mobile: string) => boolean } = {
+    '+91': (mobile) => mobile.length === 10 && ['6', '7', '8', '9'].includes(mobile.charAt(0)),
+    '+52': (mobile) => mobile.length === 10 && ['2', '3', '4', '5', '6', '7', '8', '9'].includes(mobile.charAt(0)),
+    '+63': (mobile) => mobile.length === 9,
+    '+1': (mobile) => mobile.length === 10
   };
+
+  const isValidMobile = countryCodeValidations[countryCodeVal] && countryCodeValidations[countryCodeVal](mobileVal);
+  if (isValidMobile) {
+    return '';
+  } else {
+    return { invalidMobile: true };
+  }
 }
+
+
 
