@@ -37,6 +37,7 @@
         <input type="text" id="mobileNumber" [(ngModel)]="mobileNumber" (blur)="onTouched()" (input)="updateValue()"
           class="mobile-number-input">
       </div>
+      <app-validation-errors [errors]="control?.errors" [invalid]="control?.invalid" [touched]="control?.touched" [label]="label"></app-validation-errors>
     </div>
   </div>
 </div>
