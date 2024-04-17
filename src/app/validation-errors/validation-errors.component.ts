@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule, ValidationErrors } from '@angular/for
   imports: [CommonModule,ReactiveFormsModule,FormsModule],
   templateUrl: './validation-errors.component.html',
   styleUrls: ['./validation-errors.component.scss'],
-  
+
 })
 export class ValidationErrorsComponent {
   @Input() errors: Record<string, ValidationErrors> | null = {};

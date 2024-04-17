@@ -19,3 +19,17 @@ export function whitespaceValidator(): Validators {
   };
 }
 
+export function mv(): Validators {
+  return (control: FormControl) => {
+    const mobileVal = control.value && control.value['mobile'];
+    const countryCodeVal = control.value && control.value['countrycode'];
+
+    if (countryCodeVal === '+91') {
+      if (mobileVal.length === 10) {
+        return null;
+      }
+      return { invalidMobile: true };
+    } else return { invalidMobile: true };
+  };
+}
+

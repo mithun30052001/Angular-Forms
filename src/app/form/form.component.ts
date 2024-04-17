@@ -58,7 +58,7 @@ export class FormComponent implements OnInit{
       userName: [{value: 'defaultname', disabled: false }, [Validators.required, Validators.minLength(8), Validators.maxLength(15), whitespaceValidator()]],
       password: [{value: 'R@ils', disabled: false }, [Validators.required, passwordValidator()]],
       email: [{value: 'default@gmail.com', disabled: true },[Validators.required, Validators.email]],
-      mobileNumber: [{ countrycode: '+91', mobile: '' }, [Validators.required]],
+      mobileNumber: [{ countrycode: '+91', mobile: '1111' }, [Validators.required]],
       number: [{value: null, disabled: false },[Validators.required, Validators.min(1)]],
       dropdownOption: [{value: null, disabled: false }, [Validators.required]],
       radioOption: [{value: null, disabled: false }, [Validators.required]],
