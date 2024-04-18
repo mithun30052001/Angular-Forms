@@ -45,15 +45,21 @@
     outline: none;
   }
 
+  input:disabled {
+    background-color: #e7e7e7 !important;
+    border-radius: 8px;
+    color: light-dark(rgb(84, 84, 84), rgb(170, 170, 170));;
+  }
+
   .input-with-icon {
     position: relative;
   }
 
   input-with-icon input {
-    padding-left: 30px; 
+    padding-left: 30px;
     padding-right: 30px;
   }
-   
+
   .icon-prefix,
   .icon-suffix {
       position: absolute;
