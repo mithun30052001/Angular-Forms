@@ -4,7 +4,6 @@ import { ControlValueAccessor, FormControl, FormsModule, NG_VALUE_ACCESSOR } fro
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormControlHelper } from '../helpers/form-control-helper';
 import { ValidationErrorsComponent } from '../validation-errors/validation-errors.component';
-import { ICONS } from '../icons/icons';
 import { IconService, IconType } from '../services/icons/icon.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
@@ -64,9 +63,10 @@ export class TextInputComponent implements ControlValueAccessor,OnInit{
   }
   
   protected get icons(): SafeHtml {
-    if(this.iconName === 'successinfo' && !(this.control?.valid)){
-      this.iconName = 'errorinfo';
-    }
+    this.iconName = this.iconName === 'errorinfo' && this.control?.valid ? 'successinfo' :
+                 this.iconName === 'successinfo' && !(this.control?.valid) ? 'errorinfo' :
+                 this.iconName;
+
     const svgContent = this.iconService.getSvgForName(this.iconName);
     if (svgContent) {
       return this.sanitizer.bypassSecurityTrustHtml(svgContent);
