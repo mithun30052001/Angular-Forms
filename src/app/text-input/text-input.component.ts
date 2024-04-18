@@ -50,6 +50,13 @@ export class TextInputComponent implements ControlValueAccessor,OnInit{
 
   ngOnInit() {
     this.control = FormControlHelper.setFormControl(this.injector);
+    if(this.type === 'number'){
+      this.control?.valueChanges.subscribe(() =>{
+        this.control.setValue(Math.abs(this.control.value),{
+            emitEvent: false,
+        });
+      });
+    }
   }
 
   writeValue(input: any){
