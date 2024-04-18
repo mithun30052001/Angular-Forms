@@ -66,7 +66,7 @@ export class MobileNumberComponent implements ControlValueAccessor, OnInit {
   onChange: any = () => {};
   onTouched: any = () => {};
 
-  @HostListener('document:keydown', ['$event'])
+  @HostListener('keydown', ['$event'])
     onKeyDown(event: KeyboardEvent): void {
       const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab', 'Home', 'End'];
       const isNumericKey = event.key >= '0' && event.key <= '9';
