@@ -5,16 +5,16 @@
 
             <div class="row">
                 <div class="col-lg-6 col-md-12">
-                    <app-text-input type="text" [allowOnlyText]="true" label="Username" formControlName="userName" placeholder="Enter your username"></app-text-input>
+                    <app-text-input iconName="successinfo" [isPrefix]="false" [allowOnlyText]="true" label="Username" formControlName="userName"  placeholder="Enter your username"></app-text-input>
                 </div>
                 <div class="col-lg-6 col-md-12">
-                    <app-text-input type="password" [allowOnlyText]="true" label="Password" formControlName="password" placeholder=""></app-text-input>
+                    <app-text-input type="password" [allowOnlyText]="true" label="Password"  formControlName="password" placeholder=""></app-text-input>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-lg-6 col-md-12">
-                    <app-text-input type="email" label="Email" formControlName="email" placeholder="johndoe@example.com"></app-text-input>
+                    <app-text-input iconName="email" [isPrefix]="true" type="email" label="Email" formControlName="email" placeholder="johndoe@example.com"></app-text-input>
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <app-text-input type="number" label="Expected CTC" formControlName="number" placeholder="Enter your lpa"></app-text-input>
