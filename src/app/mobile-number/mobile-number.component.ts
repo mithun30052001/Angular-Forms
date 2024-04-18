@@ -5,8 +5,6 @@ import { ValidationErrorsComponent } from '../validation-errors/validation-error
 import { CommonModule } from '@angular/common';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { IconService } from '../services/icons/icon.service';
 import { MobileTransformPipe } from 'src/app/pipes/mobile-transform.pipe';
 
 @Component({
@@ -38,32 +36,27 @@ export class MobileNumberComponent implements ControlValueAccessor, OnInit {
   countryCodeOptions: {
     label: string;
     value: string;
-    icon: any;
     code: string;
   }[] = [
     {
       label: 'India +91',
       code: this.getFlagEmoji('IN'),
       value: '+91',
-      icon: this.icons('indianflag'),
     },
     {
       label: 'Mexico +52',
       value: '+52',
       code: this.getFlagEmoji('MX'),
-      icon: this.icons('mexicanflag'),
     },
     {
       label: 'Philippines +63',
       code: this.getFlagEmoji('PH'),
       value: '+63',
-      icon: this.icons('philippinesflag'),
     },
     {
       label: 'USA +1',
       code: this.getFlagEmoji('US'),
       value: '+1',
-      icon: this.icons('americanflag'),
     },
   ];
   selectedCountryCode: string = '+91';
@@ -74,9 +67,7 @@ export class MobileNumberComponent implements ControlValueAccessor, OnInit {
   onTouched: any = () => {};
 
   constructor(
-    private injector: Injector,
-    private iconService: IconService,
-    private sanitizer: DomSanitizer
+    private injector: Injector
   ) {}
 
   ngOnInit(): void {
@@ -119,15 +110,6 @@ export class MobileNumberComponent implements ControlValueAccessor, OnInit {
       .split('')
       .map((char) => 127397 + char.charCodeAt(0));
     return String.fromCodePoint(...codePoints);
-  }
-
-  protected icons(iconName: any): SafeHtml {
-    const svgContent = this.iconService.getSvgForName(iconName);
-    if (svgContent) {
-      return this.sanitizer.bypassSecurityTrustHtml(svgContent);
-    } else {
-      return '';
-    }
   }
 
   getIcon(countryCode: string): any {
