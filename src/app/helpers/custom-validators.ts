@@ -25,11 +25,12 @@ export function mobileNumberValidator(control: FormControl<{ mobile: string; cou
   const countryCodeVal = control.value && control.value['countrycode'];
 
   const countryCodeValidations: { [key in CountryCode]: (mobile: string) => boolean } = {
-    '+91': (mobile) => mobile.length === 10 && ['6', '7', '8', '9'].includes(mobile.charAt(0)),
-    '+52': (mobile) => mobile.length === 10 && ['2', '3', '4', '5', '6', '7', '8', '9'].includes(mobile.charAt(0)),
-    '+63': (mobile) => mobile.length === 9,
-    '+1': (mobile) => mobile.length === 10
+    '+91': (mobile) => /^[6-9]\d{9}$/.test(mobile),
+    '+52': (mobile) => /^[2-9]\d{9}$/.test(mobile),
+    '+63': (mobile) => /^\d{9}$/.test(mobile),
+    '+1': (mobile) => /^\d{10}$/.test(mobile)
   };
+
 
   const isValidMobile = countryCodeValidations[countryCodeVal] && countryCodeValidations[countryCodeVal](mobileVal);
   if (isValidMobile) {
