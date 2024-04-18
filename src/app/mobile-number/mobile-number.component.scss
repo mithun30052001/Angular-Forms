@@ -4,7 +4,12 @@
     display: flex;
     flex-direction: column;
     label {
-      margin-bottom: 8px;
+      color: #28293d;
+      font-size: 16;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      position: relative;
     }
     .input-container {
       display: flex;
@@ -30,7 +35,26 @@
   }
 }
 
-.country-flag {
-  width: 1.2em;
-  display: flex;
-}
+  input {
+    padding: 8px;
+    border: 1px solid #B0C0CF;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+  }
+
+  input:focus {
+    border-color: #8638E5;
+    outline: none;
+  }
+
+  input.error {
+    border-color: red;
+    outline: none;
+  }
+
+  .country-flag {
+    width: 1.9em;
+    display: flex;
+  }

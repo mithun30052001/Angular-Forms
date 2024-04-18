@@ -19,15 +19,15 @@
 
       button {
         padding: 10px 20px;
-        background-color: var(--ags-secondary-color);
+        background-color: rgb(4,193,110);
         box-shadow: none!important;
-        border: 1px solid #2B3874 !important;
+        border: 1px solid rgb(4,193,110) !important;
         border-radius: 64px;
         color: #f0f1f5 !important;
         cursor: pointer;
 
         &:hover {
-          background-color: #004691;
+          background-color: rgb(4,193,110);
         }
 
         &:disabled {

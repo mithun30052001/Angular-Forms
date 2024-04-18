@@ -72,27 +72,17 @@ export class MobileNumberComponent implements ControlValueAccessor, OnInit {
 
   ngOnInit(): void {
     this.control = FormControlHelper.setFormControl(this.injector);
-    console.log('mobile::> ', this.control.value);
     this.mobileNumber = this.control.value['mobile'];
     this.selectedCountryCode = this.control.value['countrycode'];
-    console.log(this.mobileNumber, this.selectedCountryCode);
   }
 
   writeValue(value: any): void {
-    console.log('write value::> ', value);
     if (!this.control) {
       this.control = new FormControl(value);
     }
     if (value) {
       this.selectedCountryCode = value.countrycode || '+91';
       this.mobileNumber = value.mobile || '';
-      console.log(
-        'inside write value::> ',
-        value,
-        this.control,
-        this.selectedCountryCode,
-        this.mobileNumber
-      );
     }
   }
 
