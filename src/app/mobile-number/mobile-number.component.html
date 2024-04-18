@@ -2,11 +2,11 @@
   <div class="form-group">
     <label [for]="'mobileNumber'">{{label}}</label>
     <div class="row">
-      <div class="col-sm-2">
+      <div class="col-sm-1">
         <mat-select [(ngModel)]="selectedCountryCode" (selectionChange)="updateValue()"
           panelClass="country-code-select-panel">
           <mat-select-trigger>
-            <div class="d-flex">
+            <div class="select-content">
               <span class="country-flag" [innerHTML]="getIcon(selectedCountryCode)"></span> <span>
                 {{ selectedCountryCode
                 }}
@@ -22,8 +22,8 @@
           </mat-option>
         </mat-select>
       </div>
-      <div class="col-sm-10">
-        <input type="text" id="mobileNumber" [(ngModel)]="mobileNumber" (blur)="onTouched()" (input)="updateValue()"
+      <div class="col-sm-11">
+        <input type="text" id="mobileNumber" [(ngModel)]="mobileNumber" (blur)="onTouched()" (input)="updateValue()" placeholder="Enter Mobile Number"
           class="mobile-number-input">
       </div>
       <app-validation-errors [errors]="control?.errors" [invalid]="control?.invalid" [touched]="control?.touched" [label]="label"></app-validation-errors>
