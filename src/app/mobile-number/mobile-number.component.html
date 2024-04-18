@@ -1,6 +1,6 @@
 <div class="phone-container">
   <div class="form-group">
-    <label for="label">{{label}}</label>
+    <label [for]="'mobileNumber'">{{label}}</label>
     <div class="row">
       <div class="col-sm-2">
         <mat-select [(ngModel)]="selectedCountryCode" (selectionChange)="updateValue()"
@@ -12,7 +12,6 @@
                 }}
               </span>
             </div>
-
           </mat-select-trigger>
           <mat-option *ngFor="let option of countryCodeOptions" [value]="option.value">
             <div class="d-flex">
