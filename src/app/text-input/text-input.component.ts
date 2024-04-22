@@ -57,6 +57,13 @@ export class TextInputComponent implements ControlValueAccessor,OnInit{
         });
       });
     }
+    else if (this.type === 'text') {
+      this.control?.valueChanges.subscribe(() => {
+        const currentValue = this.control?.value.toString();
+        const updatedValue = currentValue.replace(/[^a-zA-Z]/g, '');
+        this.control.setValue(updatedValue, { emitEvent: false });
+      });
+    }
   }
 
   writeValue(input: any){
