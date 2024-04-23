@@ -4,7 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { mobileNumberValidator, passwordValidator, whitespaceValidator } from '../helpers/custom-validators';
 
 @Component({
-  selector: 'app-form',
+  selector: 'sd-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
 })

@@ -6,7 +6,7 @@ import { FormControlHelper } from '../helpers/form-control-helper';
 import { Options } from '../interfaces/options.interface'
 
 @Component({
-  selector: 'app-radio',
+  selector: 'sd-radio',
   standalone: true,
   imports: [CommonModule,ReactiveFormsModule,FormsModule],
   templateUrl: './radio.component.html',

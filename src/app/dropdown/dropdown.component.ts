@@ -5,7 +5,7 @@ import { FormControlHelper } from '../helpers/form-control-helper';
 import { distinctUntilChanged, startWith, Subject, takeUntil, tap } from 'rxjs';
 import { Options } from '../interfaces/options.interface'
 @Component({
-  selector: 'app-dropdown',
+  selector: 'sd-dropdown',
   standalone: true,
   imports: [CommonModule,ReactiveFormsModule,FormsModule],
   templateUrl: './dropdown.component.html',

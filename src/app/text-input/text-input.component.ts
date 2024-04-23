@@ -8,7 +8,7 @@ import { IconService, IconType } from '../services/icons/icon.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-text-input',
+  selector: 'sd-text-input',
   standalone: true,
   imports: [CommonModule,ReactiveFormsModule,FormsModule,ValidationErrorsComponent],
   templateUrl: './text-input.component.html',
