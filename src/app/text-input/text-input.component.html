@@ -12,8 +12,6 @@
                [class.error]="control.invalid && control.touched"
                [class.prefix-input]="isPrefix"
         />
-        <span *ngIf="isPrefix" class="icon-prefix" [innerHtml]="icons"></span>
-        <span *ngIf="!isPrefix" class="icon-suffix" [innerHtml]="icons"  [title]="(iconName === 'successinfo' || iconName === 'errorinfo') ? 'Tooltip message' : ''"></span>
     </div>
     <sd-validation-errors [errors]="control?.errors" [invalid]="control?.invalid" [touched]="control?.touched" [label]="label"></sd-validation-errors>
 </div>

@@ -4,8 +4,6 @@ import { ControlValueAccessor, FormControl, FormsModule, NG_VALUE_ACCESSOR } fro
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormControlHelper } from '../helpers/form-control-helper';
 import { ValidationErrorsComponent } from '../validation-errors/validation-errors.component';
-import { IconService, IconType } from '../services/icons/icon.service';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'sd-text-input',
@@ -19,7 +17,6 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
       useExisting: TextInputComponent,
       multi: true
     },
-    IconService
   ]
 })
 export class TextInputComponent implements ControlValueAccessor,OnInit{
@@ -28,7 +25,6 @@ export class TextInputComponent implements ControlValueAccessor,OnInit{
   @Input() type: string = 'text';
   @Input() placeholder: string = '';
   @Input() allowOnlyText: boolean = false;
-  @Input() iconName!: IconType;
   @Input() isPrefix: boolean = false;
   isIconsDefined: boolean = false;
   input!: string;
@@ -46,7 +42,7 @@ export class TextInputComponent implements ControlValueAccessor,OnInit{
     }
   }
 
-  constructor(private injector: Injector, private iconService: IconService, private sanitizer: DomSanitizer) {}
+  constructor(private injector: Injector) {}
 
   ngOnInit() {
     this.control = FormControlHelper.setFormControl(this.injector);
@@ -72,19 +68,6 @@ export class TextInputComponent implements ControlValueAccessor,OnInit{
   }
   registerOnTouched(fn: any){
     this.onTouched = fn;
-  }
-  
-  protected get icons(): SafeHtml {
-    this.iconName = this.iconName === 'errorinfo' && this.control?.valid ? 'successinfo' :
-                 this.iconName === 'successinfo' && !(this.control?.valid) ? 'errorinfo' :
-                 this.iconName;
-
-    const svgContent = this.iconService.getSvgForName(this.iconName);
-    if (svgContent) {
-      return this.sanitizer.bypassSecurityTrustHtml(svgContent);
-    } else {
-      return '';
-    }
   }
 
   get dirty(): boolean {

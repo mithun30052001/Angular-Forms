@@ -1,6 +1,6 @@
 {
   "name": "sd-angular-forms",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A library for creating custom forms",
   "main": "index.d.ts",
   "typings": "index.d.ts",
