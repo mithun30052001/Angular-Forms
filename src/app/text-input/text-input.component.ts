@@ -55,8 +55,8 @@ export class TextInputComponent implements ControlValueAccessor,OnInit{
           this.control.setValue(Math.abs(this.control.value),{emitEvent: false,});
         }
         else if (this.type === 'text') {
-          const currentValue = this.control?.value.toString();
-          const updatedValue = currentValue.replace(/[^a-zA-Z]/g, '');
+          const currentValue = this.control?.value?.toString();
+          const updatedValue = currentValue?.replace(/[^a-zA-Z]/g, '');
           if(currentValue !== updatedValue){
             this.control.setValue('', { emitEvent: false });
           }
