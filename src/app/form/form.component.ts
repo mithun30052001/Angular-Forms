@@ -56,12 +56,12 @@ export class FormComponent implements OnInit{
   createForm(){
     this.form = this.fb.group({
       userName: [{value: 'defaultname', disabled: false }, [Validators.required, Validators.minLength(8), Validators.maxLength(15), whitespaceValidator()]],
-      password: [{value: 'R@ils', disabled: false }, [Validators.required, passwordValidator()]],
+      password: [{value: 'Angular@123', disabled: false }, [Validators.required, passwordValidator()]],
       email: [{value: 'default@gmail.com', disabled: true },[Validators.required, Validators.email]],
-      mobileNumber: [{ countrycode: '+91', mobile: '' }, [Validators.required,mobileNumberValidator]],
-      number: [{value: null, disabled: false },[Validators.required, Validators.min(1)]],
-      dropdownOption: [{value: null, disabled: false }, [Validators.required]],
-      radioOption: [{value: null, disabled: false }, [Validators.required]],
+      mobileNumber: [{ countrycode: '+91', mobile: '9876543210' }, [Validators.required,mobileNumberValidator]],
+      number: [{value: 5, disabled: false },[Validators.required, Validators.min(1)]],
+      dropdownOption: [{value: "five", disabled: false }, [Validators.required]],
+      radioOption: [{value: "male", disabled: false }, [Validators.required]],
       checkboxOption: [{value: ["angular"], disabled: false }, [Validators.required]],
       workExperience: [{value: this.experience.replace(/[\r\n]+/g, ' '), disabled: false }, [Validators.required, Validators.minLength(50), Validators.maxLength(200)]],
     })
