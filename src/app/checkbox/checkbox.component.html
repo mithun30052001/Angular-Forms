@@ -1,13 +1,10 @@
-<div class="radio-wrapper">
+<div class="checkbox-wrapper">
   <label>
     {{label}}
     <span *ngIf="isRequired" class="required-marker">*</span>
   </label>
   <div *ngFor="let option of options">
-    <input type="radio" [id]="option.value + '_id'" [value]="option.value" [formControl]="control" (blur)="onTouch()">
+    <input type="checkbox" [id]="option.value + '_id'" [value]="option.value" [checked]="isChecked(option)" (change)="toggleSelection(option)" />
     <label [for]="option.value + '_id'">{{ option.label }}</label>
   </div>
 </div>
-
-
-

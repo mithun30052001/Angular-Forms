@@ -1,0 +1,42 @@
+.personal-information {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+
+    .form-title {
+      color: #415395;
+      font-size: 18px;
+      font-style: normal;
+      line-height: 24px;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    form {
+      margin-bottom: 20px;
+
+      button {
+        padding: 10px 20px;
+        background-color: rgb(4,193,110);
+        box-shadow: none!important;
+        border: 1px solid rgb(4,193,110) !important;
+        border-radius: 64px;
+        color: #f0f1f5 !important;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(4,193,110);
+        }
+
+        &:disabled {
+          cursor: pointer;
+          background-color: #c4cadf !important;
+          color: #f0f1f5 !important;
+          border: 1px solid #C4CADF !important;
+        }
+      }
+    }
+
+}
