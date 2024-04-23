@@ -26,7 +26,7 @@
         <input type="text" id="mobileNumber" [(ngModel)]="mobileNumber" (blur)="onTouched()" (input)="updateValue()" placeholder="Enter Mobile Number"
           class="mobile-number-input">
       </div>
-      <app-validation-errors [errors]="control?.errors" [invalid]="control?.invalid" [touched]="control?.touched" [label]="label"></app-validation-errors>
+      <sd-validation-errors [errors]="control?.errors" [invalid]="control?.invalid" [touched]="control?.touched" [label]="label"></sd-validation-errors>
     </div>
   </div>
 </div>
