@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ICONS } from 'src/app/icons/icons';
+import { ICONS } from 'src/lib/icons/icons';
 
 export type IconType = keyof typeof ICONS;
 

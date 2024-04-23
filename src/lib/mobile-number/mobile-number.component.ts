@@ -5,7 +5,7 @@ import { ValidationErrorsComponent } from '../validation-errors/validation-error
 import { CommonModule } from '@angular/common';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
-import { MobileTransformPipe } from 'src/app/pipes/mobile-transform.pipe';
+import { MobileTransformPipe } from 'src/lib/pipes/mobile-transform.pipe';
 
 @Component({
   selector: 'sd-mobile-number',
