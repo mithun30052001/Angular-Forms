@@ -5,7 +5,7 @@ import { FormControlHelper } from '../helpers/form-control-helper';
 import { Options } from '../interfaces/options.interface'
 
 @Component({
-  selector: 'app-checkbox',
+  selector: 'sd-checkbox',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './checkbox.component.html',

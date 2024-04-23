@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, ValidationErrors } from '@angular/forms';
 
 @Component({
-  selector: 'app-validation-errors',
+  selector: 'sd-validation-errors',
   standalone: true,
   imports: [CommonModule,ReactiveFormsModule,FormsModule],
   templateUrl: './validation-errors.component.html',

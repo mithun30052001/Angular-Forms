@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { ValidationErrorsComponent } from '../validation-errors/validation-errors.component';
 
 @Component({
-  selector: 'app-text-area',
+  selector: 'sd-text-area',
   standalone: true,
   imports: [CommonModule,ReactiveFormsModule,FormsModule,ValidationErrorsComponent],
   templateUrl: './text-area.component.html',
