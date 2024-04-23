@@ -1,9 +1,9 @@
 {
   "name": "sd-angular-forms",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "A library for creating custom forms",
-  "main": "index.d.ts",
-  "typings": "index.d.ts",
+  "main": "index.ts",
+  "typings": "index.ts",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -12,8 +12,8 @@
     "test": "ng test"
   },
   "files": [
-    "index.d.ts",
-    "public_api.d.ts",
+    "index.ts",
+    "public_api.ts",
     "src/"
   ],
   "dependencies": {
