@@ -13,6 +13,7 @@ import { TextAreaComponent } from './text-area/text-area.component';
 import { MobileNumberComponent } from './mobile-number/mobile-number.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MobileTransformPipe } from './pipes/mobile-transform.pipe';
+import { IconService } from './services/icons/icon.service';
 
 @NgModule({
   declarations: [
@@ -32,9 +33,9 @@ import { MobileTransformPipe } from './pipes/mobile-transform.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MobileTransformPipe
+    
   ],
-  providers: [],
+  providers: [MobileTransformPipe,IconService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
