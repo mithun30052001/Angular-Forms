@@ -12,6 +12,7 @@ import { ValidationErrorsComponent } from './validation-errors/validation-errors
 import { TextAreaComponent } from './text-area/text-area.component';
 import { MobileNumberComponent } from './mobile-number/mobile-number.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MobileTransformPipe } from './pipes/mobile-transform.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MobileTransformPipe
   ],
   providers: [],
   bootstrap: [AppComponent]
