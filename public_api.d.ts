@@ -7,3 +7,7 @@ export * from './src/app/radio/radio.component';
 export * from './src/app/text-area/text-area.component';
 export * from './src/app/validation-errors/validation-errors.component';
 export * from './src/app/pipes/mobile-transform.pipe';
+export * from './src/app/icons/icons';
+export * from './src/app/services/icons/icon.service';
+export * from './src/app/helpers/custom-validators';
+export * from './src/app/helpers/form-control-helper';
