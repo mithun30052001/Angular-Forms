@@ -55,7 +55,7 @@ export class FormComponent implements OnInit{
 
   createForm(){
     this.form = this.fb.group({
-      userName: [{value: 'defaultname', disabled: false }, [Validators.required, Validators.minLength(8), Validators.maxLength(15), whitespaceValidator()]],
+      userName: [{value: 'defaultname', disabled: false }, [Validators.required, Validators.minLength(8), Validators.maxLength(15), whitespaceValidator(), this.capitalsValidator()]],
       password: [{value: 'Angular@123', disabled: false }, [Validators.required, passwordValidator()]],
       email: [{value: 'default@gmail.com', disabled: true },[Validators.required, Validators.email]],
       mobileNumber: [{ countrycode: '+91', mobile: '9876543210' }, [Validators.required,mobileNumberValidator]],
@@ -65,6 +65,14 @@ export class FormComponent implements OnInit{
       checkboxOption: [{value: ["angular"], disabled: false }, [Validators.required]],
       workExperience: [{value: this.experience.replace(/[\r\n]+/g, ' '), disabled: false }, [Validators.required, Validators.minLength(50), Validators.maxLength(200)]],
     })
+  }
+
+  capitalsValidator(): Validators {
+    return (control: FormControl) => {
+      const value: string = control.value;
+      const hasCapital = /[A-Z]/.test(value);
+      return hasCapital ? null : { capitalError: [true, {errorMessage: "Please enter atleast one capital letter"}]};
+    };
   }
 
   onSubmit(formData: any) {
