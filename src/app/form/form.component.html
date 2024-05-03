@@ -1,47 +1,17 @@
-<div class="container">
-    <div class="personal-information">
-        <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-control">
-            <div class="form-title">Personel Information</div>
-
-            <div class="row">
-                <div class="col-lg-6 col-md-12">
-                    <app-text-input iconName="successinfo" [isPrefix]="false" [allowOnlyText]="true" label="Username" formControlName="userName"  placeholder="Enter your username"></app-text-input>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <app-text-input type="password" [allowOnlyText]="true" label="Password"  formControlName="password" placeholder=""></app-text-input>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-6 col-md-12">
-                    <app-text-input iconName="email" [isPrefix]="true" type="email" label="Email" formControlName="email" placeholder="johndoe@example.com"></app-text-input>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <app-text-input type="number" label="Expected CTC" formControlName="number" placeholder="Enter your lpa"></app-text-input>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-6 col-md-12">
-                    <app-dropdown label="Experience" [options]="dropdownOptions" formControlName="dropdownOption" placeholder="Select years of experience"></app-dropdown>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <app-radio label="Gender" [options]="radioOptions" formControlName="radioOption"></app-radio>
-                </div>
-            </div>
-
-            <app-checkbox label="Tech-Stack" [options]="checkBoxOptions" formControlName="checkboxOption"></app-checkbox>
-
-            <app-text-area label="Work-Experience" formControlName="workExperience" placeholder="Share your Experience here"></app-text-area>
-
-        <app-mobile-number type="text" label="Mobile Number" formControlName="mobileNumber"></app-mobile-number>
-
-
-            <div class="row">
-                <div class="col-12 text-end">
-                    <button [disabled]="!form.valid">Submit</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field class="custom-mat-field">
+    <ngx-mat-intl-tel-input
+      formControlName="phone"
+      [onlyCountries]="['in', 'ph', 'mx', 'us']"
+      [enablePlaceholder]="true"
+      name="phone"
+      #phone
+      [cssClass]="'custom-flag-selector'"
+    ></ngx-mat-intl-tel-input>
+    <mat-hint>Please enter your phone number.</mat-hint>
+    <mat-error *ngIf="form.get('phone')?.invalid && (form.get('phone')?.dirty || form.get('phone')?.touched)">
+      Please enter a valid phone number.
+    </mat-error>
+  </mat-form-field>
+  <button type="submit">Submit</button>
+</form>

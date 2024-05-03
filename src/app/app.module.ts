@@ -13,12 +13,14 @@ import { ValidationErrorsComponent } from './validation-errors/validation-errors
 import { TextAreaComponent } from './text-area/text-area.component';
 import { MobileNumberComponent } from './mobile-number/mobile-number.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxMatIntlTelInputComponent } from 'ngx-mat-phone-input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxMatIntlTelInputComponent,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
